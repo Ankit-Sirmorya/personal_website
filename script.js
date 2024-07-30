@@ -8,12 +8,14 @@ $('.mobile-mask').on('click', function() {
 });
 
 function navClick (itemId) {
-  var elements = document?.getElementsByClassName('selected');
-  while (elements?.length > 0) {
-    elements?.[0]?.classList?.remove('selected');
+  var elementsSelected = document?.getElementsByClassName('selected');
+  while (elementsSelected?.length > 0) {
+    elementsSelected?.[0]?.classList?.remove('selected');
   }
-  var element = document?.getElementById(itemId);
-  element?.classList?.add('selected');
+  var elementSelectedByID = document?.getElementById(itemId);
+  elementSelectedByID?.classList?.add('selected');
+
+  $('.nav, .mobile-mask').removeClass('show');
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
@@ -130,7 +132,6 @@ function switchTheme (themeType) {
     elementMainDiv?.classList?.remove('light');
     elementsDark?.classList?.remove('none');
     elementsLight?.classList?.add('none');
-    initializeParticle("#999999");
     document.getElementById('particles-js').addEventListener('click', function() {
       var randomColor = '#' + '10101a';
       document.body.style.backgroundColor = randomColor;
@@ -139,7 +140,6 @@ function switchTheme (themeType) {
     elementMainDiv?.classList?.add('light');
     elementsDark?.classList?.add('none');
     elementsLight?.classList?.remove('none');
-    initializeParticle("#000000");
     document.getElementById('particles-js').addEventListener('click', function() {
       var randomColor = '#' + 'fff';
       document.body.style.backgroundColor = randomColor;
