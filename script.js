@@ -141,7 +141,7 @@ function switchTheme (themeType) {
     elementsDark?.classList?.add('none');
     elementsLight?.classList?.remove('none');
     document.getElementById('particles-js').addEventListener('click', function() {
-      var randomColor = '#' + 'fff';
+      var randomColor = '#' + 'E6E6E7';
       document.body.style.backgroundColor = randomColor;
     });
   }
